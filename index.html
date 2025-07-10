@@ -75,6 +75,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
 
         .logo {
@@ -171,6 +172,55 @@
             border-bottom: 1px solid #fff;
         }
 
+        /* --- Mobile Specific Styles --- */
+        @media (max-width: 768px) { /* Adjust this breakpoint if needed */
+            .nav {
+                flex-direction: column; /* Stack logo and buttons vertically */
+                align-items: center; /* Center items horizontally when stacked */
+            }
+
+            .logo {
+                margin-bottom: 15px; /* Add space below the logo when stacked */
+            }
+
+            .cta-button {
+                width: 100%; /* Make buttons take full width */
+                max-width: 280px; /* Limit button width for better appearance on small screens */
+                margin-left: 0 !important; /* Remove inline margin-left */
+                margin-bottom: 10px; /* Add space between stacked buttons */
+            }
+
+            /* Remove bottom margin from the last button to prevent extra space */
+            .cta-button:last-child {
+                margin-bottom: 0;
+            }
+
+            h1 {
+                font-size: 2.5rem; /* Make heading smaller on mobile */
+                letter-spacing: -1px;
+            }
+
+            h2 {
+                font-size: 2rem; /* Make subheading smaller on mobile */
+            }
+
+            p {
+                font-size: 1rem; /* Make paragraph text slightly smaller */
+            }
+
+            section {
+                padding: 60px 0; /* Reduce section padding on mobile */
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr; /* Stack service items vertically on mobile */
+            }
+
+            .service-item {
+                text-align: center; /* Center service item content when stacked */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -188,9 +238,7 @@
     <main>
         <section id="hero">
             <div class="container">
-                                <h1>you dream it, we devit.<br>no bullshit.</h1>
-
-                <!-- <h1>your idea, built right.<br>no bullshit.</h1> -->
+                <h1>you dream it, we devit.<br>no bullshit.</h1>
                 <p>we are a development company that partners with startups and businesses to design, build, and scale exceptional software.</p>
             </div>
         </section>
